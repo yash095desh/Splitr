@@ -13,7 +13,10 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
+import type * as contacts from "../contacts.js";
+import type * as seed from "../seed.js";
 import type * as users from "../users.js";
+import type * as utils_getUserFromCtx from "../utils/getUserFromCtx.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -24,7 +27,10 @@ import type * as users from "../users.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
+  contacts: typeof contacts;
+  seed: typeof seed;
   users: typeof users;
+  "utils/getUserFromCtx": typeof utils_getUserFromCtx;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,
